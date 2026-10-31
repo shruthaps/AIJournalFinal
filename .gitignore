@@ -1,0 +1,21 @@
+# Node dependencies
+node_modules/
+.npm/
+
+# Build outputs
+client/dist/
+
+# Local databases & uploads (preserved in local volume)
+server/uploads/*
+!server/uploads/.gitkeep
+server/data/*.db-wal
+server/data/*.db-shm
+
+# Environment & Secrets
+.env
+.env.local
+.env.production
+
+# System files
+.DS_Store
+Thumbs.db

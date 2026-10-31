@@ -1,0 +1,21 @@
+{
+  "name": "dearly",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dearly — An Intelligent Personal Digital Journal",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "build": "npm --prefix client run build",
+    "test": "npm --prefix server test",
+    "start": "npm --prefix server start"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

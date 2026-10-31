@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+/* Paper Grain Texture */
+.paper-texture {
+  background-color: #FFFDF8;
+  background-image: radial-gradient(#d6c9ba 0.75px, transparent 0.75px), radial-gradient(#d6c9ba 0.75px, #FFFDF8 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+.paper-parchment {
+  background-color: #FAF4E8;
+  background-image: radial-gradient(#cbbfae 0.6px, transparent 0.6px);
+  background-size: 24px 24px;
+}
+
+.paper-rose {
+  background-color: #FCF7F6;
+  background-image: radial-gradient(#dfc7c5 0.6px, transparent 0.6px);
+  background-size: 24px 24px;
+}
+
+.paper-sage {
+  background-color: #F8FAF7;
+  background-image: radial-gradient(#cad7c7 0.6px, transparent 0.6px);
+  background-size: 24px 24px;
+}
+
+/* Ruled Notebook Lines (aligned to handwriting baseline) */
+.notebook-ruled {
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 31px,
+    #E8E1D8 31px,
+    #E8E1D8 32px
+  );
+  line-height: 32px;
+}
+
+.notebook-ruled-subtle {
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 31px,
+    rgba(232, 225, 216, 0.6) 31px,
+    rgba(232, 225, 216, 0.6) 32px
+  );
+  line-height: 32px;
+}
+
+/* Washi Tape styling */
+.washi-tape-sage {
+  background: rgba(220, 229, 217, 0.85);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(1px);
+}
+
+.washi-tape-rose {
+  background: rgba(238, 221, 220, 0.85);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(1px);
+}
+
+.washi-tape-butter {
+  background: rgba(243, 233, 184, 0.85);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(1px);
+}
+
+.washi-tape-craft {
+  background: rgba(204, 185, 163, 0.8);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(1px);
+}
+
+/* Book Spine Shadow */
+.book-spine-left {
+  box-shadow: inset 24px 0 25px -12px rgba(73, 67, 62, 0.08),
+              inset 4px 0 8px -2px rgba(73, 67, 62, 0.06);
+}
+
+.book-spine-right {
+  box-shadow: inset -24px 0 25px -12px rgba(73, 67, 62, 0.08),
+              inset -4px 0 8px -2px rgba(73, 67, 62, 0.06);
+}
+
+.book-center-crease {
+  box-shadow: -12px 0 16px -8px rgba(73, 67, 62, 0.07),
+              12px 0 16px -8px rgba(73, 67, 62, 0.07);
+}
+
+/* Subtle Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #EDE5DA;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B8A99A;
+}
+
+/* Smooth page transitions */
+@keyframes pageTurnIn {
+  from {
+    opacity: 0.6;
+    transform: perspective(1000px) rotateY(-8deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1000px) rotateY(0deg);
+  }
+}
+
+.animate-page-turn {
+  animation: pageTurnIn 0.35s ease-out forwards;
+}
+
+/* Focus outline refinement */
+*:focus-visible {
+  outline: 2px solid #B8A99A;
+  outline-offset: 2px;
+}

@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  dearly-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dearly-journal
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+      - PORT=5000
+      - JWT_SECRET=dearly-super-secret-key-production-change-me
+      - DB_PATH=/app/server/data/dearly.db
+      # Optional external LLM API Key:
+      # - GEMINI_API_KEY=your_gemini_api_key_here
+    volumes:
+      - dearly-data:/app/server/data
+      - dearly-uploads:/app/server/uploads
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:5000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+volumes:
+  dearly-data:
+    driver: local
+  dearly-uploads:
+    driver: local
