@@ -19,3 +19,9 @@ server/data/*.db-shm
 # System files
 .DS_Store
 Thumbs.db
+node_modules/
+.env
+.env.*
+!.env.example
+dist/
+.DS_Store
